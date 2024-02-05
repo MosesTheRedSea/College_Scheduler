@@ -20,4 +20,25 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="554dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:backgroundTint="#FFFFFF"
+        android:text="Add"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:textStyle="bold"
+        android:text="Remove" />
+
 </LinearLayout>
