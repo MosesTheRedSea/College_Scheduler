@@ -16,17 +16,33 @@ public class Event {
                 events.add(event);
             }
         }
-
         return events;
     }
+
+    public static void removeItem(String Course, String Professor, String Time, LocalDate date) {
+        for (int i = 0; i < eventsList.size(); ++i) {
+            if (eventsList.get(i).getDate().equals(date)) {
+                if (eventsList.get(i).getName().equals(Course)) {
+                    if (eventsList.get(i).getProfessor().equals(Professor)) {
+                        if (eventsList.get(i).getTime().equals(Time)) {
+                            eventsList.remove(i);
+                        }
+                    }
+                }
+            }
+        }
+    }
     private String name;
+
+    private String professor;
     private LocalDate date;
     private String time;
 
-    public Event(String name, LocalDate date, String time) {
+    public Event(String name, LocalDate date, String time, String professor) {
         this.name = name;
         this.date = date;
         this.time = time;
+        this.professor = professor;
     }
 
     public String getName() {
@@ -52,4 +68,13 @@ public class Event {
     public void setTime(String time) {
         this.time = time;
     }
+
+    public String getProfessor() {
+        return this.professor;
+    }
+
+    public void setProfessor(String prof) {
+        this.professor = prof;
+    }
 }
+

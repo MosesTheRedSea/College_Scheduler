@@ -92,7 +92,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:background="@android:color/transparent"
+
+        android:backgroundTint="#021B4A"
         android:onClick="saveEventAction"
         android:text="Save"
         android:textSize="20sp"

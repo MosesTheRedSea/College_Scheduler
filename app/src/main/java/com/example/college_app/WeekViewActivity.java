@@ -44,6 +44,7 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarChang
         calendarRecyclerView.setLayoutManager(layoutManager);
         calendarRecyclerView.setAdapter(calendarChange);
         setEventAdapter();
+
     }
 
     public void previousWeekAction(View view) {
@@ -62,7 +63,6 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarChang
     }
 
     private void setEventAdapter() {
-
         ArrayList<Event> dailyEvents = Event.eventsForDate(CalendarUtils.selectDate);
         EventAdapter eventAdapter = new EventAdapter(getApplicationContext(), dailyEvents);
         eventListView.setAdapter(eventAdapter);

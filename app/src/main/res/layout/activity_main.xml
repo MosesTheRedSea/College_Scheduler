@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:background="@android:color/transparent"
+        android:backgroundTint="#021B4A"
         android:contentDescription="Scroll Forward"
         android:onClick="weeklyAction"
         android:text="Week"
@@ -46,7 +46,7 @@
             android:layout_width="183dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="#55B0E6"
+            android:background="#021B4A"
             android:text="Feb 2024"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
@@ -141,14 +141,17 @@
         android:layout_height="440dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/toDoList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="16dp"
+        android:foregroundTint="#F8F8F8"
         android:onClick="onClickList"
-        app:srcCompat="@android:drawable/ic_menu_edit" />
+        app:backgroundTint="#021B4A"
+        app:rippleColor="#F4F4F4"
+        app:srcCompat="@android:drawable/ic_menu_edit"
+        app:tint="#EFEAEA" />
 
 
 </LinearLayout>

@@ -31,7 +31,7 @@
             android:layout_width="183dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="#8255B0E6"
+            android:background="#021B4A"
             android:text="Feb 2024"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
@@ -129,12 +129,12 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:text="Add"
-        android:textStyle="bold"
-        android:onClick="newEventAction"
         android:layout_gravity="center"
-        android:textSize="20sp"/>
+        android:background="@android:color/transparent"
+        android:onClick="newEventAction"
+        android:text="Add"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <ListView
         android:id="@+id/eventListView"

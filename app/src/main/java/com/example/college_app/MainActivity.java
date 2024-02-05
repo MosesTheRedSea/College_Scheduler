@@ -82,9 +82,8 @@ public class MainActivity extends AppCompatActivity implements CalendarChange.On
 
 
     public void onClickList(View view) {
-        startActivity(new Intent(this, com.example.college_app.toDoList.class));
+        startActivity(new Intent(this, toDoList.class));
     }
-
 
 
     public void weeklyAction(View view) {
