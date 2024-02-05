@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="cellDayText" type="id"/>
+    <item name="calendarRecyclerView" type="id"/>
+    <item name="leftArrow" type="id"/>
+    <item name="rightArrow" type="id"/>
+    <item name="monthYearTV2" type="id"/>
+</resources>
