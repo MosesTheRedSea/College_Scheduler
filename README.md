@@ -1,1 +1,1 @@
-#College Scheduler App#
+College Scheduler App
