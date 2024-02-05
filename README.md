@@ -1,4 +1,4 @@
-#College Scheduler App
+##College Scheduler App
 
 A user-friendly and feature-packed Android Studio app designed to streamline your college experience by efficiently managing your class schedule. With a clean and intuitive interface, this app is the perfect companion for students who want to stay organized and on top of their academic commitments.
 
