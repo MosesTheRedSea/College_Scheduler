@@ -7,6 +7,7 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     android:background="@drawable/background_color"
+    android:textColor="#FFFFFF"
     tools:context=".toDoList">
 
     <TextView
@@ -19,5 +20,37 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:background="@android:color/transparent"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="addItemToList"
+        android:text="Add"
+        android:textStyle="bold" />
+
+
+
+
+    <EditText
+        android:id="@+id/id_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="Tap here to add an Event"
+        android:textColor="@color/white"
+        android:background="@android:color/transparent"
+        />
+
+
+    <ListView
+        android:id="@+id/id_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="511dp"
+        android:textColor="@color/white">
+
+    </ListView>
 
 </LinearLayout>

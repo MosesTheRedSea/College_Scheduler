@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.time.LocalTime;
 
 public class EventEditActivity extends AppCompatActivity {
-
+//This is for the add page in week view
     private EditText eventCourseET;
     private TextView eventDateET, eventTimeET, eventProfessorET;
 
