@@ -26,6 +26,7 @@ public class Event {
                     if (eventsList.get(i).getProfessor().equals(Professor)) {
                         if (eventsList.get(i).getTime().equals(Time)) {
                             eventsList.remove(i);
+                            break;
                         }
                     }
                 }

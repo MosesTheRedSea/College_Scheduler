@@ -25,15 +25,15 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarChang
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_week_view);
-        initWidgets();
-        setWeekView();
-    }
 
-    private void initWidgets() {
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
         monthYearText = findViewById(R.id.monthYearTV2);
         eventListView = findViewById(R.id.eventListView);
+
+        setWeekView();
     }
+
+
 
     private void setWeekView() {
         monthYearText.setText(CalendarUtils.monthYearFromDate(CalendarUtils.selectDate));
@@ -68,11 +68,21 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarChang
         eventListView.setAdapter(eventAdapter);
     }
 
+   /* public void deleteUpdateEvents(View view) {
+        Event.removeItem(view);
+        ArrayList<Event> dailyEvents;
+
+        EventAdapter eventAdapter = new EventAdapter(getApplicationContext(), dailyEvents);
+        eventListView.setAdapter(eventAdapter);
+
+    } */
+
     @Override
     public void onItemClick(int position, LocalDate date) {
         CalendarUtils.selectDate = date;
         setWeekView();
     }
+
     public void newEventAction(View view) {
         startActivity(new Intent(this, EventEditActivity.class));
     }
