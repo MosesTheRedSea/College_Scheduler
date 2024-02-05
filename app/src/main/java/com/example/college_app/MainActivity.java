@@ -20,6 +20,8 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.time.LocalDate;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements CalendarChange.On
 
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
+
+    private FloatingActionButton toDoList;
 
 
     @Override
@@ -74,6 +78,14 @@ public class MainActivity extends AppCompatActivity implements CalendarChange.On
         }
 
     }
+
+
+
+    public void onClickList(View view) {
+        startActivity(new Intent(this, com.example.college_app.toDoList.class));
+    }
+
+
 
     public void weeklyAction(View view) {
         startActivity(new Intent(this, WeekViewActivity.class));

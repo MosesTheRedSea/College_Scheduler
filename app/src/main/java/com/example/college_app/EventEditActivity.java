@@ -14,16 +14,14 @@ public class EventEditActivity extends AppCompatActivity {
     private EditText eventCourseET;
     private TextView eventDateET, eventTimeET, eventProfessorET;
 
-    private LocalTime time;
+    private String time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_edit);
         intitWidgets();
-        time = LocalTime.now();
-        eventDateET.setText("Date:  "+ CalendarUtils.formattedDate(CalendarUtils.selectDate));
-        eventTimeET.setText("Time:  "+ CalendarUtils.formattedTime(time));
+        eventDateET.setText("Date:  " + CalendarUtils.formattedDate(CalendarUtils.selectDate));
     }
 
     private void intitWidgets() {
@@ -35,7 +33,8 @@ public class EventEditActivity extends AppCompatActivity {
 
     public void saveEventAction(View view) {
         String eventName = eventCourseET.getText().toString();
-        Event newEvent = new Event(eventName, CalendarUtils.selectDate, time);
+        String eventTime = eventTimeET.getText().toString();
+        Event newEvent = new Event(eventName, CalendarUtils.selectDate, eventTime);
         Event.eventsList.add(newEvent);
         finish();
     }
