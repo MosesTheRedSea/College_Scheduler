@@ -80,7 +80,6 @@ public class MainActivity extends AppCompatActivity implements CalendarChange.On
     }
 
 
-
     public void onClickList(View view) {
         startActivity(new Intent(this, toDoList.class));
     }

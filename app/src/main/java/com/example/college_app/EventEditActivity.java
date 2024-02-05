@@ -38,7 +38,9 @@ public class EventEditActivity extends AppCompatActivity {
         Event newEvent = new Event(eventName, CalendarUtils.selectDate, eventTime, professorN);
         Event.eventsList.add(newEvent);
         finish();
-
-
     }
+
+
+
+
 }
