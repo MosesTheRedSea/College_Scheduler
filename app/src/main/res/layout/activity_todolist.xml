@@ -10,7 +10,9 @@
     android:textColor="#FFFFFF"
     tools:context=".toDoList">
 
+
     <TextView
+        android:id="@+id/todo_list_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -20,7 +22,6 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold" />
-
 
     <Button
         android:id="@+id/button"
@@ -33,22 +34,39 @@
         android:textStyle="bold" />
 
 
-
+    <Button
+        android:id="@+id/edit_button"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:background="@android:color/transparent"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="editItem"
+        android:text="edit"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/id_edit_text"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:text="Tap here to add an Event"
+        android:text="Tap here to Add or Edit the name of the Event"
         android:textColor="@color/white"
         android:background="@android:color/transparent"
         />
 
 
+    <EditText
+
+        android:id="@+id/edit_text_position"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@android:color/transparent"
+        android:text="Input(a number) which event you want to change"
+        android:textColor="@color/white" />
+
     <ListView
         android:id="@+id/id_list_view"
         android:layout_width="match_parent"
-        android:layout_height="511dp"
+        android:layout_height="406dp"
         android:textColor="@color/white">
 
     </ListView>
