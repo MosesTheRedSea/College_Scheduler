@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.CalendarView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,7 +20,6 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarChang
 
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
-
     private ListView eventListView;
 
     @Override
@@ -32,8 +33,6 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarChang
 
         setWeekView();
     }
-
-
 
     private void setWeekView() {
         monthYearText.setText(CalendarUtils.monthYearFromDate(CalendarUtils.selectDate));
@@ -62,20 +61,13 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarChang
         setEventAdapter();
     }
 
-    private void setEventAdapter() {
+    public void setEventAdapter() {
+        Log.d("debug", CalendarUtils.selectDate.toString());
         ArrayList<Event> dailyEvents = Event.eventsForDate(CalendarUtils.selectDate);
+
         EventAdapter eventAdapter = new EventAdapter(getApplicationContext(), dailyEvents);
         eventListView.setAdapter(eventAdapter);
     }
-
-   /* public void deleteUpdateEvents(View view) {
-        Event.removeItem(view);
-        ArrayList<Event> dailyEvents;
-
-        EventAdapter eventAdapter = new EventAdapter(getApplicationContext(), dailyEvents);
-        eventListView.setAdapter(eventAdapter);
-
-    } */
 
     @Override
     public void onItemClick(int position, LocalDate date) {
@@ -84,6 +76,28 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarChang
     }
 
     public void newEventAction(View view) {
-        startActivity(new Intent(this, EventEditActivity.class));
+        String ButtonClicked = "Course button";
+        Intent intent = new Intent(this, EventEditActivity.class);
+        intent.putExtra("button_clicked", ButtonClicked);
+        startActivity(intent);
     }
+
+    public void newExamAction(View view) {
+        String ButtonClicked = "Exam button";
+        Intent intent = new Intent(this, EventEditActivity.class);
+        intent.putExtra("button_clicked", ButtonClicked);
+        startActivity(intent);
+    }
+
+    public void newAssignAction(View view) {
+        String ButtonClicked = "Assign button";
+        Intent intent = new Intent(this, EventEditActivity.class);
+        intent.putExtra("button_clicked", ButtonClicked);
+        startActivity(intent);
+    }
+
+
+
+
+
 }

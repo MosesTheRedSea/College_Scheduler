@@ -39,9 +39,10 @@ public class toDoList extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                toDoList.remove(position);
+                String removedItem = toDoList.remove(position);
                 // Update the adapter
                 arrayAdapter.notifyDataSetChanged();
+                saveTasksToPrefs(); // Save the updated list
             }
 
         });

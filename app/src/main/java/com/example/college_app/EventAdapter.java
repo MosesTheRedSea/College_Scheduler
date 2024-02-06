@@ -1,6 +1,7 @@
 package com.example.college_app;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,7 +40,16 @@ public class EventAdapter extends ArrayAdapter<Event> {
 
         TextView eventCellTV = convertView.findViewById(R.id.eventCellTV);
 
-        String eventTitle = event.getName() + " "  + event.getProfessor() + " " + event.getTime();
+        String eventTitle = "";
+
+        if (event.getType() == 1) {
+             eventTitle = event.getName() + " "  + event.getProfessor() + " " + event.getTime();
+        } else if (event.getType() == 2) {
+             eventTitle = event.getAssingment() + " "  + event.getDueDate() + " " + event.getCourse();
+        } else if (event.getType() == 3) {
+             eventTitle = event.getExam() + " "  + event.getTime2() + " " + event.getLocation();
+        }
+
         eventCellTV.setText(eventTitle);
 
         Button deleteButton = convertView.findViewById(R.id.delete);
@@ -51,6 +61,14 @@ public class EventAdapter extends ArrayAdapter<Event> {
                 int clickedPosition = (int) getItemId(position);
 
                 Event clickedEvent = getItem(clickedPosition);
+
+                if (clickedEvent.getType() == 1) {
+
+                } else if (clickedEvent.getType() == 2) {
+
+                } else if (clickedEvent.getType() == 3) {
+
+                }
 
                 if (clickedEvent != null) {
                     Event.removeItem(clickedEvent.getName(), clickedEvent.getProfessor(), clickedEvent.getTime(), clickedEvent.getDate());

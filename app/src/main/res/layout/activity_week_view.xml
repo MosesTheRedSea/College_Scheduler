@@ -126,20 +126,48 @@
         android:layout_height="0dp"
         android:layout_weight="1"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@android:color/transparent"
-        android:onClick="newEventAction"
-        android:text="Add"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="76dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="newEventAction"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="15dp"
+            android:backgroundTint="#00432F2F"
+            android:text="Course"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#00432F2F"
+            android:onClick="newExamAction"
+            android:layout_marginRight="15dp"
+            android:text="Exam"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#00432F2F"
+            android:onClick="newAssignAction"
+            android:text="Assign"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+
 
     <ListView
         android:id="@+id/eventListView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"/>
+        android:layout_weight="5" />
 
 </LinearLayout>

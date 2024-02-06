@@ -21,7 +21,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/eventCourseET"
+        android:id="@+id/eventCourseET2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -40,7 +40,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/eventDateET"
+        android:id="@+id/eventDateET2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -59,7 +59,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/eventTimeET"
+        android:id="@+id/eventTimeET2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -80,7 +80,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/eventProfessorET"
+        android:id="@+id/eventProfessorET2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -92,9 +92,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
+        android:id="@+id/change"
         android:backgroundTint="#021B4A"
-        android:onClick="saveEventAction"
-        android:text="Save"
+        android:onClick="changeEventAction"
+        android:text="Change"
         android:textSize="20sp"
         android:textStyle="bold" />
 </LinearLayout>
