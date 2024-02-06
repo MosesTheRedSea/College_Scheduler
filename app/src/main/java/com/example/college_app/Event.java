@@ -29,12 +29,47 @@ public class Event {
         return events;
     }
 
-    public static void removeItem(String Course, String Professor, String Time, LocalDate date) {
+    public static void removeCourse(String Course, String Professor, String Time, LocalDate date) {
         for (int i = 0; i < eventsList.size(); ++i) {
-            if (eventsList.get(i).getDate().equals(date)) {
-                if (eventsList.get(i).getName().equals(Course)) {
-                    if (eventsList.get(i).getProfessor().equals(Professor)) {
-                        if (eventsList.get(i).getTime().equals(Time)) {
+            if (eventsList.get(i).getType() == 1) {
+                if (eventsList.get(i).getDate().equals(date)) {
+                    if (eventsList.get(i).getName().equals(Course)) {
+                        if (eventsList.get(i).getProfessor().equals(Professor)) {
+                            if (eventsList.get(i).getTime().equals(Time)) {
+                                eventsList.remove(i);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public static void removeExam(String exam, String time2, String location, LocalDate date2) {
+        for (int i = 0; i < eventsList.size(); ++i) {
+            if (eventsList.get(i).getType() == 3) {
+                if (eventsList.get(i).getDate2().equals(date2)) {
+                    if (eventsList.get(i).getExam().equals(exam)) {
+                        if (eventsList.get(i).getTime2().equals(time2)) {
+                            if (eventsList.get(i).getLocation().equals(location)) {
+                                eventsList.remove(i);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    public static void removeAssignment(String assignment, LocalDate dueDate, String Course) {
+        for (int i = 0; i < eventsList.size(); ++i) {
+            if (eventsList.get(i).getType() == 2) {
+                if (eventsList.get(i).getDueDate().equals(dueDate)) {
+                    if (eventsList.get(i).getAssingment().equals(assignment)) {
+                        if (eventsList.get(i).getCourse().equals(Course)) {
                             eventsList.remove(i);
                             break;
                         }
@@ -43,10 +78,6 @@ public class Event {
             }
         }
     }
-
-
-
-
 
 
     // Add an Exam to the List of Events
