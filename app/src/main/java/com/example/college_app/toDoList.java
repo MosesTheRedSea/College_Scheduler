@@ -25,6 +25,8 @@ public class toDoList extends AppCompatActivity {
     private ArrayAdapter<String> arrayAdapter;
     private ListView listView;
     private EditText editText;
+    private EditText position;
+    private TextView title;
     private static final String PREFS_NAME = "TodoListPrefs";
 
     @Override
@@ -47,8 +49,9 @@ public class toDoList extends AppCompatActivity {
 
         });
         editText = findViewById(R.id.id_edit_text);
-
+        position = findViewById(R.id.edit_text_position);
         loadTasksFromPrefs();
+        title = findViewById(R.id.todo_list_title);
     }
 
         public void addItemToList(View view) {
@@ -60,7 +63,36 @@ public class toDoList extends AppCompatActivity {
                 editText.setText("");
                 System.out.println("This button has been clicked");
             }
+            title.setText("To Do List");
         }
+
+
+        public void editItem(View view) {
+
+
+                String compare = "Input(a number) which event you want to change";
+                String posText = String.valueOf(position.getText());
+                if (toDoList.size() == 0) {
+                    title.setText("There are no events!!!!!");
+                } else if (posText.isEmpty()) {
+                    title.setText("THERE IS NOTHING IN THE IPNUT !!!!!");
+                } else if (compare.equals(posText)) {
+                    title.setText("YOU HAVE TO INPUT A POSITION!!!!");
+                } else if (posText.matches(".*[a-zA-Z].*")) {
+                    title.setText("YOU HAVE TO INPUT A NUMBER");
+                } else {
+                    int pos = Integer.parseInt(posText) - 1;
+                    if (pos > toDoList.size()) {
+                        title.setText("The input is bigger than the the # of events");
+                    } else {
+                        toDoList.set(pos, editText.getText().toString().trim());
+                        arrayAdapter.notifyDataSetChanged();
+                        saveTasksToPrefs();
+                        editText.setText("");
+                        title.setText("To Do List");
+                    }
+                }
+            }
 
     private void saveTasksToPrefs() {
         SharedPreferences preferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
