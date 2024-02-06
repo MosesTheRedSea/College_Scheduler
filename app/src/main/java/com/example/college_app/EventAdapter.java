@@ -62,18 +62,19 @@ public class EventAdapter extends ArrayAdapter<Event> {
 
                 Event clickedEvent = getItem(clickedPosition);
 
-                if (clickedEvent.getType() == 1) {
-
-                } else if (clickedEvent.getType() == 2) {
-
-                } else if (clickedEvent.getType() == 3) {
-
-                }
-
                 if (clickedEvent != null) {
-                    Event.removeItem(clickedEvent.getName(), clickedEvent.getProfessor(), clickedEvent.getTime(), clickedEvent.getDate());
-                    updateDataSet(Event.eventsList);
+                    if (clickedEvent.getType() == 1) {
+                        Event.removeItem(clickedEvent.getName(), clickedEvent.getProfessor(), clickedEvent.getTime(), clickedEvent.getDate());
+                        updateDataSet(Event.eventsList);
+                    } else if (clickedEvent.getType() == 2) {
+
+                    } else if (clickedEvent.getType() == 3) {
+
+                    }
                 }
+
+
+
 
             }
         });
