@@ -1,7 +1,5 @@
 package com.example.college_app;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -9,15 +7,12 @@ import android.widget.TextView;
 
 import java.time.LocalTime;
 
-
 public class EventEditActivity extends AppCompatActivity {
 //This is for the add page in week view
     private EditText eventCourseET;
     private TextView eventDateET, eventTimeET, eventProfessorET;
-
     private EditText eventExamET;
     private TextView eventDateExET, eventTimeExET, eventLocationET;
-
     private EditText eventAssignET;
     private TextView assignDateET, eventAssignCourseET;
 
@@ -38,7 +33,6 @@ public class EventEditActivity extends AppCompatActivity {
             initWidgets3();
             assignDateET.setText("Date:  " + CalendarUtils.formattedDate(CalendarUtils.selectDate));
         }
-
     }
 
     private void intitWidgets() {
@@ -86,10 +80,4 @@ public class EventEditActivity extends AppCompatActivity {
         Event.eventsList.add(newEvent);
         finish();
     }
-
-
-
-
-
-
 }

@@ -7,21 +7,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/background_color"
-    tools:context=".EventEditActivity">
+    tools:context=".ExamEditActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-        android:text="Course Name"
+        android:text="Exam"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/eventCourseET2"
+        android:id="@+id/changeExam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -40,7 +40,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/eventDateET2"
+        android:id="@+id/changeExamDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -59,7 +59,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/eventTimeET2"
+        android:id="@+id/changeExamTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -73,14 +73,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Professor"
+        android:text="Location"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/eventProfessorET2"
+        android:id="@+id/changeExamLoc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -92,9 +92,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:id="@+id/changeCourse"
         android:backgroundTint="#021B4A"
-        android:onClick="changeEventAction"
+        android:onClick="saveExamAction"
         android:text="Change"
         android:textSize="20sp"
         android:textStyle="bold" />
