@@ -1,11 +1,20 @@
 package com.example.college_app;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class EventEditActivity extends AppCompatActivity {
 //This is for the add page in week view
@@ -16,10 +25,15 @@ public class EventEditActivity extends AppCompatActivity {
     private EditText eventAssignET;
     private TextView assignDateET, eventAssignCourseET;
 
+    private EventAdapter eventAdapter;
+    private ListView listView;
+    private Spinner sortSpinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         String buttonClicked = getIntent().getStringExtra("button_clicked");
+
         if ("Course button".equals(buttonClicked)) {
             setContentView(R.layout.activity_event_edit);
             intitWidgets();
@@ -33,6 +47,7 @@ public class EventEditActivity extends AppCompatActivity {
             initWidgets3();
             assignDateET.setText("Date:  " + CalendarUtils.formattedDate(CalendarUtils.selectDate));
         }
+
     }
 
     private void intitWidgets() {
@@ -80,4 +95,6 @@ public class EventEditActivity extends AppCompatActivity {
         Event.eventsList.add(newEvent);
         finish();
     }
+
+
 }

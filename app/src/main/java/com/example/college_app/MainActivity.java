@@ -29,12 +29,9 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements CalendarChange.OnItemListener {
-
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
-
     private FloatingActionButton toDoList;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +50,6 @@ public class MainActivity extends AppCompatActivity implements CalendarChange.On
     private void setMonthView() {
         monthYearText.setText(CalendarUtils.monthYearFromDate(CalendarUtils.selectDate));
         ArrayList<LocalDate> daysInMonth = CalendarUtils.daysInMonthArray(CalendarUtils.selectDate);
-
         CalendarChange calendarChange = new CalendarChange(daysInMonth, this);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
         calendarRecyclerView.setLayoutManager(layoutManager);
@@ -76,9 +72,7 @@ public class MainActivity extends AppCompatActivity implements CalendarChange.On
             CalendarUtils.selectDate = date;
             setMonthView();
         }
-
     }
-
 
     public void onClickList(View view) {
         startActivity(new Intent(this, toDoList.class));

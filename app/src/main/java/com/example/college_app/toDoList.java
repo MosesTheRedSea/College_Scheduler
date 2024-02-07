@@ -68,8 +68,6 @@ public class toDoList extends AppCompatActivity {
 
 
         public void editItem(View view) {
-
-
                 String compare = "Input(a number) which event you want to change";
                 String posText = String.valueOf(position.getText());
                 if (toDoList.size() == 0) {

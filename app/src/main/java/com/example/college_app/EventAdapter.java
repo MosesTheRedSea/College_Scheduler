@@ -75,30 +75,9 @@ public class EventAdapter extends ArrayAdapter<Event>  {
             }
         });
 
-        Button editButton = convertView.findViewById(R.id.edit);
-
-        editButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-            }
-
-        });
-
         return convertView;
     }
 
-
-    private void openAndHandleEditLayoutForAssignment(Event event) {
-
-    }
-
-    private void openAndHandleEditLayoutForExam(Event event) {
-
-
-
-    }
 
 
 
