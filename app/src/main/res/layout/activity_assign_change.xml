@@ -10,6 +10,7 @@
     tools:context=".EventEditActivity">
 
     <TextView
+        android:id="@+id/EditCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -21,7 +22,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/assignChange"
+        android:id="@+id/EditAssignment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -59,7 +60,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/assignCourseChange"
+        android:id="@+id/editAssignmentCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -73,6 +74,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:backgroundTint="#021B4A"
+        android:onClick="saveCourseData"
         android:text="Change"
         android:textSize="20sp"
         android:textStyle="bold" />

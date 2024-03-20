@@ -16,15 +16,18 @@ import androidx.annotation.Nullable;
 import android.content.DialogInterface;
 import java.util.List;
 
-public class EventAdapter extends ArrayAdapter<Event>  {
+public class EventAdapter extends ArrayAdapter<DailyEvent>  {
 
     private Button deleteButton;
+    private EditButtonClickListener editButtonClickListener;
 
-    public EventAdapter(@NonNull Context context, List<Event> events) {
+
+    public EventAdapter(@NonNull Context context, List<DailyEvent> events, EditButtonClickListener listener) {
         super(context, 0, events);
+        this.editButtonClickListener = listener;
     }
 
-    public void updateDataSet(List<Event> updatedList) {
+    public void updateDataSet(List<DailyEvent> updatedList) {
         clear();
         addAll(updatedList);
         notifyDataSetChanged();
@@ -33,44 +36,55 @@ public class EventAdapter extends ArrayAdapter<Event>  {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-        Event event = getItem(position);
+        DailyEvent event = getItem(position);
 
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.event_cell, parent, false);
         }
 
+
         TextView eventCellTV = convertView.findViewById(R.id.eventCellTV);
 
         String eventTitle = "";
 
-        if (event.getType() == 1) {
-             eventTitle = event.getName() + " "  + event.getProfessor() + " " + event.getTime();
-        } else if (event.getType() == 2) {
-             eventTitle = event.getAssingment() + " "  + event.getDueDate() + " " + event.getCourse();
-        } else if (event.getType() == 3) {
-             eventTitle = event.getExam() + " "  + event.getTime2() + " " + event.getLocation();
+        assert event != null;
+
+        if (event.getDailyEventType().equals("Course")) {
+            eventTitle = event.getCourseName() + " " + event.getCourseProfessor() + " " + event.getCourseTime();
+        } else if (event.getDailyEventType().equals("Assignment")) {
+            eventTitle = event.getAssignmentName() + " " + event.getAssignmentCourseName();
+        } else if (event.getDailyEventType().equals("Exam")) {
+            eventTitle = event.getExam() + " " + event.getExamTime() + " " + event.getExamLocation();
         }
 
         eventCellTV.setText(eventTitle);
 
+        Button editButton = convertView.findViewById(R.id.editCellBTN);
+        // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+        editButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View w) {
+                // The Position that was Clicked
+                DailyEvent clickedEvent = DailyEvent.eventsList.get(position);
+                if (editButtonClickListener != null && clickedEvent != null) {
+                    editButtonClickListener.onEditButtonClick(clickedEvent);
+                }
+            }
+        });
+
+
+        // Delete Button in Event Cell
         Button deleteButton = convertView.findViewById(R.id.delete);
 
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int clickedPosition = (int) getItemId(position);
-                Event clickedEvent = getItem(clickedPosition);
+                DailyEvent clickedEvent = DailyEvent.eventsList.get(position);
+
                 if (clickedEvent != null) {
-                    if (clickedEvent.getType() == 1) {
-                        Event.removeCourse(clickedEvent.getName(), clickedEvent.getProfessor(), clickedEvent.getTime(), clickedEvent.getDate());
-                        updateDataSet(Event.eventsList);
-                    } else if (clickedEvent.getType() == 2) {
-                        Event.removeAssignment(clickedEvent.getAssingment(), clickedEvent.getDueDate(), clickedEvent.getCourse());
-                        updateDataSet(Event.eventsList);
-                    } else if (clickedEvent.getType() == 3) {
-                        Event.removeExam(clickedEvent.getExam(), clickedEvent.getTime2(), clickedEvent.getLocation(), clickedEvent.getDate2());
-                        updateDataSet(Event.eventsList);
-                    }
+                    DailyEvent.removeEvent(clickedEvent);
+                    updateDataSet(DailyEvent.eventsList);
                 }
             }
         });

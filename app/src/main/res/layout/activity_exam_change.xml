@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/background_color"
-    tools:context=".ExamEditActivity">
+    tools:context=".EventChangeActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -93,7 +93,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:backgroundTint="#021B4A"
-        android:onClick="saveExamAction"
+        android:onClick="saveCourseData"
         android:text="Change"
         android:textSize="20sp"
         android:textStyle="bold" />

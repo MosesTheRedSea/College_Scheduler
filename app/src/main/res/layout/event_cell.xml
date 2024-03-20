@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="60dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".WeekViewActivity">
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -18,31 +21,43 @@
         android:textStyle="bold"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/delete"
-        android:layout_width=".35in"
-        android:layout_height=".25in"
-        android:layout_marginEnd="72dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:text="X"
-        android:textSize="50px"
-        app:backgroundTint="#970505"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent">
 
     <Button
-        android:id="@+id/edit"
+        android:id="@+id/editCellBTN"
         android:layout_width=".35in"
         android:layout_height=".25in"
-        android:layout_marginEnd="4dp"
+        android:background="#03AA32"
         android:orientation="horizontal"
-        android:text="Edit"
-        android:textSize="45px"
+        android:textColor="@color/white"
+        android:text="E"
+        android:textSize="50px"
         app:backgroundTint="#03AA32"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="0dp" />
+        tools:layout_editor_absoluteY="9dp" />
 
+        <Button
+            android:id="@+id/delete"
+            android:layout_width=".35in"
+            android:layout_height=".25in"
+            android:background="#970505"
+            android:orientation="horizontal"
+            android:text="X"
+            android:textColor="@color/white"
+            android:textSize="50px"
+            app:backgroundTint="#970505"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

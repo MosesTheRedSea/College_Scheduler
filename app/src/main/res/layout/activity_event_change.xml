@@ -21,7 +21,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/eventCourseET2"
+        android:id="@+id/editCourseName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -40,7 +40,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/eventDateET2"
+        android:id="@+id/editCourseDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -59,14 +59,12 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/eventTimeET2"
+        android:id="@+id/editCourseTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:ems="10"
         android:inputType="text"/>
-
-
 
     <TextView
         android:layout_width="wrap_content"
@@ -80,7 +78,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/eventProfessorET2"
+        android:id="@+id/editCourseProfessor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -94,7 +92,7 @@
         android:layout_marginTop="30dp"
         android:id="@+id/changeCourse"
         android:backgroundTint="#021B4A"
-        android:onClick="changeEventAction"
+        android:onClick="saveCourseData"
         android:text="Change"
         android:textSize="20sp"
         android:textStyle="bold" />

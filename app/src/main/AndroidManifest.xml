@@ -19,9 +19,6 @@
             android:name=".WeekViewActivity"
             android:exported="false" />
         <activity
-            android:name=".ExamEditActivity"
-            android:exported="false" />
-        <activity
             android:name=".toDoList"
             android:exported="false" />
         <activity
