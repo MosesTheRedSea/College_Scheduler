@@ -1,5 +1,6 @@
 # Course Crafter
-![Course_Crafter](https://github.com/MosesTheRedSea/Course_Crafter/assets/69429336/c5d8dff5-2c37-4faf-ab66-16305a7ec954)
+![flat-calendar-icon-design-business-symbol-vector-9245252](https://github.com/MosesTheRedSea/Course_Crafter/assets/69429336/e755c9af-3e35-493e-8c7e-c47102ae56d8)
+
 
 Welcome to Course Crafter, rour Custom Academic Organizer. 
 
